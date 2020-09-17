@@ -1,0 +1,6 @@
+<div class="batiment_container">
+    <h2>{{ batiment?.Nom }} </h2>
+    <ng-template ngFor let-zone [ngForOf]="batiment?.Zones">
+        <app-zone-detail [zone]="zone"></app-zone-detail>
+    </ng-template>
+</div>

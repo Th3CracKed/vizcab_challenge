@@ -33,6 +33,11 @@ export class ZoneDetailComponent {
     this.recalculerZoneDetail();
   }
 
+  clearNbLogement() {
+    this.nbLogement = undefined;
+    this.recalculerZoneDetail();
+  }
+
   onRatioHabitableChange(newValue: number) {
     this.ratioHabitable = newValue;
     this.recalculerZoneDetail();
@@ -46,4 +51,8 @@ export class ZoneDetailComponent {
     this.nombreDoccupant = this.zoneService.calculerNombreOccupantParZone(zone);
   }
 
+  clearRatioHabitable() {
+    this.ratioHabitable = undefined;
+    this.recalculerZoneDetail();
+  }
 }

@@ -12,6 +12,7 @@ export class ZoneDetailComponent {
   nbLogement: number;
   ratioHabitable: number;
   surfaceMoyenne: number;
+  nombreDoccupant: number;
   private _zone: Zone;
 
   @Input() set zone(value: Zone) {
@@ -42,6 +43,7 @@ export class ZoneDetailComponent {
     zone.Nb_logement = this.nbLogement || zone.Nb_logement;
     zone.Ratio_habitable = this.ratioHabitable || zone.Ratio_habitable;
     this.surfaceMoyenne = this.zoneService.calculerSurfaceMoyenneParZone(zone);
+    this.nombreDoccupant = this.zoneService.calculerNombreOccupantParZone(zone);
   }
 
 }

@@ -9,6 +9,8 @@ import { ZoneService } from 'src/app/services';
   styleUrls: ['./zone-detail.component.scss']
 })
 export class ZoneDetailComponent {
+  nbLogement: number;
+  ratioHabitable: number;
   surfaceMoyenne: number;
   private _zone: Zone;
 
@@ -25,8 +27,20 @@ export class ZoneDetailComponent {
 
   constructor(private zoneService: ZoneService) { }
 
+  onNbLogementChange(newValue: number) {
+    this.nbLogement = newValue;
+    this.recalculerZoneDetail();
+  }
+
+  onRatioHabitableChange(newValue: number) {
+    this.ratioHabitable = newValue;
+    this.recalculerZoneDetail();
+  }
+
   private recalculerZoneDetail() {
     const zone = R.clone(this.zone);
+    zone.Nb_logement = this.nbLogement || zone.Nb_logement;
+    zone.Ratio_habitable = this.ratioHabitable || zone.Ratio_habitable;
     this.surfaceMoyenne = this.zoneService.calculerSurfaceMoyenneParZone(zone);
   }
 

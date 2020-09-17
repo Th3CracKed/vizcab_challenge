@@ -18,6 +18,23 @@
                     "SURT": 240
                 }
             ]
+        },
+        {
+            "Index": 2,
+            "Nom": "Zone2",
+            "Nb_logement": 6,
+            "Ratio_habitable": 0.8,
+            "Groupes": [{
+                    "Index": 1,
+                    "Nom": "Groupe1",
+                    "SURT": 230
+                },
+                {
+                    "Index": 2,
+                    "Nom": "Groupe2",
+                    "SURT": 540
+                }
+            ]
         }]
     }]
 }

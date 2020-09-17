@@ -3,6 +3,16 @@
         <mat-card-title>{{zone?.Nom }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+        <mat-form-field class="input_container">
+            <mat-label>Nombre logement</mat-label>
+            <input matInput type="number" min="0" [ngModel]="nbLogement" placeholder="Nombre logement"
+                (ngModelChange)="onNbLogementChange($event)">
+        </mat-form-field>
+        <mat-form-field class="input_container">
+            <mat-label>Ratio Habitable</mat-label>
+            <input matInput type="number" min="0" [ngModel]="ratioHabitable" placeholder="Ratio Habitable"
+                (ngModelChange)="onRatioHabitableChange($event)">
+        </mat-form-field>
         <div>Surface Moyenne : {{ surfaceMoyenne | number }}</div>
     </mat-card-content>
 </mat-card>
